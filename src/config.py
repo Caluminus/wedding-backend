@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     db_db: str
 
     debug: bool = False
+    ADMIN_TOKEN: str = None
     
 TORTOISE_ORM = {
     'connections': {
@@ -32,7 +33,7 @@ TORTOISE_ORM = {
     },
     'apps': {
         'models': {
-            'models': ['src.models'],
+            'models': ['src.models', 'aerich.models'],
             # If no default_connection specified, defaults to 'default'
             'default_connection': 'default',
         }
